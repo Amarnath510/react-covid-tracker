@@ -1,0 +1,27 @@
+.state-list-item {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  background-color: #FFF;
+  border: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: inherit;
+}
+
+.state-list-item__state-stats {
+  width: 100%;
+}
+
+.state-list-item:hover {
+  box-shadow: 0 0 32px rgba(33,33,33,.2);
+}
+
+.state-list-item__title {
+  padding-bottom: 8px;
+  font-size: 100%;
+  font-weight: bold;
+}

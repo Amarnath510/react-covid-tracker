@@ -1,0 +1,8 @@
+.covid-tracker-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  margin-top: 16px;
+}

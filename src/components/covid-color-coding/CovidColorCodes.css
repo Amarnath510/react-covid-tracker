@@ -1,0 +1,19 @@
+.covid-color-codes {
+  padding: 16px;
+}
+
+.covid-color-codes__code {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.covid-color-codes__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.covid-color-codes__list-item {
+  display: flex;
+  align-items: center;
+}

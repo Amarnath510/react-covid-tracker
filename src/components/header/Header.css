@@ -1,0 +1,19 @@
+.header__title {
+  text-align: center;
+}
+
+.header__nav-links {
+  list-style: none;
+  display: flex;
+  padding-top: 16px;
+  justify-content: center;
+}
+
+.header__nav-link:first-of-type {
+  margin-right: 32px;
+}
+
+.header__nav-link-active {
+  border-bottom: 2px solid white;
+  padding-bottom: 4px;
+}

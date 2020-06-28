@@ -1,0 +1,10 @@
+.covid-tracker-sort {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 32px;
+  align-items: center;
+}
+
+.covid-tracker-sort__select {
+  padding: 4px;
+}

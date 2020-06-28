@@ -1,0 +1,4 @@
+.state-stats__list {
+  display: flex;
+  justify-content: space-between;
+}
