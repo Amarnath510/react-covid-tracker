@@ -12,7 +12,7 @@ export class StateList extends Component {
     this.state = {
       modal: {
         isModalOpen: false,
-        stateInfo: null,
+        stateInfo: {},
         stateWithDistrictsInfo: null
       }
     }
@@ -58,14 +58,18 @@ export class StateList extends Component {
             this.props.statewise.map(stateInfo => {
               return <li key={stateInfo.statecode}>
                 <StateListItem  stateInfo={stateInfo} onStateSelect={this.handleStateSelect.bind(this)}/>
-                <Modal style={ modalStyle }
-                  isOpen={this.state.modal.isModalOpen}
-                  ariaHideApp={false}>
-                  <StateInfoModal 
-                    stateInfo={this.state.modal.stateInfo}
-                    stateWithDistrictsInfo={this.state.modal.stateWithDistrictsInfo}
-                    onRequestClose={ () => this.setModalStatus(false) }/>
-                </Modal>
+                {
+                  (stateInfo.statecode === this.state.modal.stateInfo.statecode) &&
+                  <Modal style={modalStyle}
+                    isOpen={this.state.modal.isModalOpen}
+                    ariaHideApp={false}>
+                    <StateInfoModal
+                      stateInfo={this.state.modal.stateInfo}
+                      stateWithDistrictsInfo={this.state.modal.stateWithDistrictsInfo}
+                      onRequestClose={() => this.setModalStatus(false)}
+                    />
+                  </Modal>
+                }
               </li>
             })
           }
