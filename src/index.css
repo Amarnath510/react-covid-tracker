@@ -97,9 +97,13 @@ p {
 
 .covid-tracker-app__header,
 .covid-tracker-footer {
-  background: rgb(73, 79, 82);
+  background: linear-gradient(to right, #606c88, #3f4c6b);
   color: white;
   padding: 32px;
+}
+
+.covid-tracker-footer {
+  padding: 16px;
 }
 
 /* media queries */

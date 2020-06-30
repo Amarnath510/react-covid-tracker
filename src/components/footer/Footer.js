@@ -12,7 +12,7 @@ export class Footer extends Component {
           <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer" className="external-link link">React</a>
         </p>
         <p className="text-light">
-          &copy; Amarnath Chandana, 2020
+          2020 &copy; Amarnath Chandana
         </p>
       </footer>
     )
