@@ -23,9 +23,9 @@ p {
   padding: 4px 0;
 }
 
-.text-title {
+/* .text-title {
   color: #0079c2;
-}
+} */
 
 .text-light {
   color: #626b7a;
@@ -102,6 +102,12 @@ p {
   padding: 32px;
 }
 
+.ReactModal__Content {
+  width: 60%;
+  margin: 0 auto;
+  height: 80%;
+}
+
 /* media queries */
 @media only screen and (max-width: 720px) {
 
@@ -120,4 +126,11 @@ p {
   .covid-color-codes__list {
     flex-direction: column;
   }
+
+  .ReactModal__Content {
+    width: auto;
+    margin: 0 auto;
+    height: auto;
+  }
+
 }

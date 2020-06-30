@@ -13,7 +13,7 @@ export class StateInfoModal extends Component {
           <button type="button" className="state-info-modal__close-btn text-light" onClick={ this.props.onRequestClose }>X</button>
         </div>
         <div className="state-info-modal__header">
-          <h2 className="state-info-modal__title text-title">{ stateInfo.state }</h2>
+          <h2 className="state-info-modal__title text-light">{ stateInfo.state }</h2>
           <p className="state-info-modal__desc text-light">Last updated: <strong className="text-covid">{ stateInfo.lastupdatedtime }</strong></p>
         </div>
         <div className="state-info-modal__content">
@@ -42,7 +42,7 @@ export class StateInfoModal extends Component {
           </ul>
           <div className="state-info-modal__disclaimer">
             <p className="state-info-modal__desc text-light">Disclaimer: &nbsp;
-              <strong>We display only top 5 districts(if available) with active cases.</strong>
+              <strong>Displaying only top 5 districts(if available) with highest active cases.</strong>
             </p>
           </div>
         </div>
