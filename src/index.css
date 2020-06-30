@@ -95,18 +95,11 @@ p {
   text-decoration: none;
 }
 
-.covid-tracker-footer {
-  padding: 16px;
-}
-
-.covid-tracker-app__header {
-  padding: 32px;
-}
-
 .covid-tracker-app__header,
 .covid-tracker-footer {
   background: linear-gradient(to right, #606c88, #3f4c6b);
   color: white;
+  padding: 32px;
 }
 
 /* media queries */
