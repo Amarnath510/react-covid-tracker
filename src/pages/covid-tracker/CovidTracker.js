@@ -3,9 +3,9 @@ import CovidTrackerHeader from '../../components/covid-tracker-header/CovidTrack
 import CovidTrackerApi from '../../http/CovidTrackerApi';
 import Loading from '../../components/loading/Loading';
 import './CovidTracker.css';
-import CovidTrackerSort from '../../components/covid-tracker-sort/CovidTrackerSort';
 import CovidTrackerUtil from '../../util/CovidTrackerUtil';
-import StateList from '../../components/state-list/StateList';
+import CovidTotalStats from '../../components/covid-total-stats/CovidTotalStats';
+import StateTableData from '../../components/state-table-data/StateTableData';
 
 export class CovidTracker extends Component {
 
@@ -17,7 +17,8 @@ export class CovidTracker extends Component {
       casesTimeSeries: [],
       statesWithDistricts: {},
       isLoading: true,
-      showModal: false
+      showModal: false,
+      sortBy: 'state-inc'
     }
     this.covidApi = CovidTrackerApi.getInstance();
   }
@@ -42,16 +43,19 @@ export class CovidTracker extends Component {
 
   onSortChange = (sortBy)  => {
     this.setState({
-      statewise: CovidTrackerUtil.sortDataBy(this.state.covidData.statewise, sortBy)
+      statewise: CovidTrackerUtil.sortDataBy(this.state.covidData.statewise, sortBy),
+      sortBy: sortBy
     });
   }
 
   covidTrackerInfo = () => {
-    const { covidData, statewise, statesWithDistricts } = this.state;
+    const { covidData, statewise } = this.state;
     return <React.Fragment>
+      <CovidTotalStats totalStats={ covidData.statewise[0] }/>
         <CovidTrackerHeader covidData={ covidData } />
-        <CovidTrackerSort onSortChanged={ this.onSortChange }/>
-        <StateList statewise={ statewise } statesWithDistricts={ statesWithDistricts }/>
+        {/* <CovidTrackerSort onSortChanged={ this.onSortChange }/> */}
+      {/* <StateList statewise={ statewise } statesWithDistricts={ statesWithDistricts }/> */}
+        <StateTableData statewise={statewise} onSortChanged={this.onSortChange} sortBy={ this.state.sortBy }/>
       </React.Fragment>
   }
 

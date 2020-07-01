@@ -14,6 +14,7 @@ export class Header extends Component {
       <header className="covid-tracker-app__header">
         <nav className="header__nav">
           <h1 className="header__title">
+            <img src="images/covid.png" alt="" className="header__logo"/>
             <Link to="/" className="header__logo-link">Covid-19 Tracker (India)</Link>
           </h1>
           {/* <ul className="header__nav-links">

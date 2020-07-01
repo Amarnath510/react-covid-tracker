@@ -40,6 +40,10 @@ p {
   text-decoration: none;
 }
 
+.text-white {
+  color: #FFF;
+}
+
 .deaths-bg {
   background: #626b7a;
 }
@@ -86,20 +90,19 @@ p {
 
 .covid-tracker-app__main {
   flex: 1;
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
 }
 
 .header__logo-link {
-  color: white;
+  color: #FFF;
   text-decoration: none;
 }
 
 .covid-tracker-app__header,
 .covid-tracker-footer {
-  background: linear-gradient(to right, #606c88, #3f4c6b);
-  color: white;
-  padding: 32px;
+  background: #4f5f76;
+  padding: 24px;
 }
 
 .ReactModal__Content {
@@ -131,6 +134,10 @@ p {
     width: auto;
     margin: 0 auto;
     height: auto;
+  }
+
+  .covid-total-stats__card {
+    width: 170px !important;
   }
 
 }

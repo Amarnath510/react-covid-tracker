@@ -1,0 +1,36 @@
+.state-table-data__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 80%;
+  margin: 0 auto;
+}
+
+.state-table-data__table-data-header,
+.state-table-data__table-data {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.state-table-data__table-data-header {
+  cursor: pointer;
+}
+
+.state-table-data__table-row:nth-child(even) {
+  background: #e7e9ed;
+}
+
+.state-table-data__sort-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 4px;
+}
+
+.state-table-data__sort-icon {
+  width: 10px;
+  color: #CCC;
+}
+
+.state-table-data__sort_active {
+  color: #000;
+}

@@ -29,13 +29,13 @@ class CovidTrackerUtil {
     return isNaN(input) ? input : parseInt(input, 10);
   }
 
-  static sortByGivenAttributeAndOrder = (state1, state2, attribute, order = 'desc') => {
+  static sortByGivenAttributeAndOrder = (state1, state2, attribute, order = 'dec') => {
     const state1ActiveCases = this.convertStringToNum(state1[attribute]);
     const state2ActiveCases = this.convertStringToNum(state2[attribute]);
     if (state1ActiveCases > state2ActiveCases) {
-      return order === 'desc' ? -1 : 1;
+      return order === 'dec' ? -1 : 1;
     } else if  (state1ActiveCases < state2ActiveCases) {
-      return order === 'desc' ? 1 : -1;
+      return order === 'dec' ? 1 : -1;
     } else {
       return 0;
     }

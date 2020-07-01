@@ -23,10 +23,10 @@ export class CovidTrackerHeader extends Component {
     return (
         !this.state.isLoading && 
           <header className="covid-tracker-header">
-            <h2 className="covid-tracker-header__title text-light">State-wise Covid Cases</h2>
-            <p className="covid-tracker-header__desc">Last Updated Date: &nbsp;
-              <strong className="covid-tracker-header__last-updated-date">{this.state.lastUpdatedDate}</strong>
-            </p>
+            <h2 className="covid-tracker-header__title">State-wise Covid Cases</h2>
+              <p className="covid-tracker-header__desc">&nbsp;Last Updated Date: &nbsp;
+                <strong className="covid-tracker-header__last-updated-date">{this.state.lastUpdatedDate}</strong>
+              </p>
           </header>
     )
   }
