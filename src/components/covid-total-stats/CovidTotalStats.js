@@ -21,7 +21,7 @@ export class CovidTotalStats extends Component {
           <li className="covid-total-stats__card">
             <div className="covid-total-stats__card-container">
               <div className="covid-total-stats__card-stats">
-                <p className="text-light">Active Cases</p>
+                <p className="text-light">Active</p>
                 <h3>{parseInt(this.props.totalStats.active, 10).toLocaleString()}</h3>
               </div>
               <div className="covid-total-stats__card-logo-container">
