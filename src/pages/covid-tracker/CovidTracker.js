@@ -6,6 +6,7 @@ import './CovidTracker.css';
 import CovidTrackerUtil from '../../util/CovidTrackerUtil';
 import CovidTotalStats from '../../components/covid-total-stats/CovidTotalStats';
 import StateTableData from '../../components/state-table-data/StateTableData';
+import CovidCharts from '../../components/covid-charts/CovidCharts';
 
 export class CovidTracker extends Component {
 
@@ -50,12 +51,13 @@ export class CovidTracker extends Component {
 
   covidTrackerInfo = () => {
     const { covidData, statewise } = this.state;
-    const casesTimeSeries = covidData.cases_time_series[covidData.cases_time_series.length - 1];
+    const latestCasesTimeSeries = covidData.cases_time_series[covidData.cases_time_series.length - 1];
     return <React.Fragment>
-      <CovidTotalStats totalStats={covidData.statewise[0]} casesTimeSeries={casesTimeSeries }/>
-        <CovidTrackerHeader covidData={ covidData } />
-        <StateTableData statewise={statewise} onSortChanged={this.onSortChange} sortBy={ this.state.sortBy }/>
-      </React.Fragment>
+      <CovidTotalStats totalStats={covidData.statewise[0]} latestCasesTimeSeries={ latestCasesTimeSeries }/>
+      <CovidTrackerHeader covidData={ covidData } />
+      <StateTableData statewise={statewise} onSortChanged={this.onSortChange} sortBy={ this.state.sortBy }/>
+      <CovidCharts casesTimeSeries={ covidData.cases_time_series }/>
+    </React.Fragment>
   }
 
   render() {

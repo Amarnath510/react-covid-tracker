@@ -8,11 +8,12 @@ export class CovidTotalStats extends Component {
       const total = parseInt(totalCases, 10);
       const dailyActive = parseInt(latestActiveCases, 10);
       const totalPer = ((dailyActive / total) * 100).toFixed(2);
+      const message = ` over yesterday `
       return <div className="covid-total-stats__daily-cases">
         <span className="covid-total-stats__daily-total">
           {`${totalPer}%`} &#8593;
         </span>
-        <span className="text-light">&nbsp; yesterday</span>
+        <span className="text-light">{ message }</span>
       </div>
     };
 
@@ -20,7 +21,7 @@ export class CovidTotalStats extends Component {
       const label = ` ${message} yesterday`;
       return <div className="covid-total-stats__daily-cases">
         <span className={`covid-total-stats__daily-${type}`}>
-          { parseInt(casesCount, 10).toLocaleString()}
+          { parseInt(casesCount, 10).toLocaleString() }
         </span>
         <span className="text-light">{ label }</span>
       </div>
@@ -39,7 +40,7 @@ export class CovidTotalStats extends Component {
                 <img src="images/confirmed.png" alt="confirmed" className="covid-total-stats__card-logo"/>
               </div>
             </div>
-            { percentageTotalCases(this.props.totalStats.confirmed, this.props.casesTimeSeries.dailyconfirmed) }
+            { percentageTotalCases(this.props.totalStats.confirmed, this.props.latestCasesTimeSeries.dailyconfirmed) }
           </li>
           <li className="covid-total-stats__card">
             <div className="covid-total-stats__card-container">
@@ -51,7 +52,7 @@ export class CovidTotalStats extends Component {
                 <img src="images/active.png" alt="confirmed" className="covid-total-stats__card-logo" />
               </div>
             </div>
-            { dailyCases('confirmed', this.props.casesTimeSeries.dailyconfirmed, 'cases') }
+            { dailyCases('confirmed', this.props.latestCasesTimeSeries.dailyconfirmed, 'cases') }
           </li>
         </ul>
         <ul className="covid-total-stats__cards">
@@ -65,7 +66,7 @@ export class CovidTotalStats extends Component {
                 <img src="images/recovered.png" alt="confirmed" className="covid-total-stats__card-logo" />
               </div>
             </div>
-            { dailyCases('recovered', this.props.casesTimeSeries.dailyrecovered, 'recovered') }
+            { dailyCases('recovered', this.props.latestCasesTimeSeries.dailyrecovered, 'recovered') }
           </li>
           <li className="covid-total-stats__card">
             <div className="covid-total-stats__card-container">
@@ -77,7 +78,7 @@ export class CovidTotalStats extends Component {
                 <img src="images/death.png" alt="confirmed" className="covid-total-stats__card-logo" />
               </div>
             </div>
-            { dailyCases('deaths', this.props.casesTimeSeries.dailydeceased, 'deaths') }
+            { dailyCases('deaths', this.props.latestCasesTimeSeries.dailydeceased, 'deaths') }
           </li>
         </ul>
       </div>
