@@ -8,7 +8,7 @@
   box-shadow: 0 0 8px rgba(33,33,33,.2);
   border-radius: 5px;
   padding: 16px;
-  width: 300px;
+  width: 280px;
 }
 
 .covid-total-stats__card-logo-container {
@@ -31,4 +31,35 @@
   align-items: center;
 }
 
+.covid-total-stats__daily-cases {
+  font-size: 80%;
+}
 
+.covid-total-stats__daily-confirmed,
+.covid-total-stats__daily-recovered,
+.covid-total-stats__daily-deaths,
+.covid-total-stats__daily-total {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px;
+  color: #FFF;
+  border-radius: 5px;
+  width: 70px;
+  text-align: center;
+}
+
+.covid-total-stats__daily-confirmed {
+  background: #ff4800;
+}
+
+.covid-total-stats__daily-recovered {
+  background: #1bae4d;
+}
+
+.covid-total-stats__daily-deaths {
+  background: #282c37;
+}
+
+.covid-total-stats__daily-total {
+  background: #ff595d;
+}

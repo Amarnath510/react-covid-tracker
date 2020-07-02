@@ -50,11 +50,10 @@ export class CovidTracker extends Component {
 
   covidTrackerInfo = () => {
     const { covidData, statewise } = this.state;
+    const casesTimeSeries = covidData.cases_time_series[covidData.cases_time_series.length - 1];
     return <React.Fragment>
-      <CovidTotalStats totalStats={ covidData.statewise[0] }/>
+      <CovidTotalStats totalStats={covidData.statewise[0]} casesTimeSeries={casesTimeSeries }/>
         <CovidTrackerHeader covidData={ covidData } />
-        {/* <CovidTrackerSort onSortChanged={ this.onSortChange }/> */}
-      {/* <StateList statewise={ statewise } statesWithDistricts={ statesWithDistricts }/> */}
         <StateTableData statewise={statewise} onSortChanged={this.onSortChange} sortBy={ this.state.sortBy }/>
       </React.Fragment>
   }

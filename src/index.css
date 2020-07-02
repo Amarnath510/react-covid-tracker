@@ -90,7 +90,7 @@ p {
 
 .covid-tracker-app__main {
   flex: 1;
-  width: 40%;
+  width: 45%;
   margin: 0 auto;
   padding: 16px 0;
 }
@@ -148,8 +148,12 @@ p {
   }
 
   .covid-total-stats__card {
-    width: 80% !important;
+    width: 100% !important;
     margin-bottom: 8px;
+  }
+
+  .covid-total-stats__daily-cases {
+    font-size: 100% !important;
   }
 
 }
