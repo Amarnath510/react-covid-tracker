@@ -31,6 +31,10 @@ p {
   color: #626b7a;
 }
 
+.text-light-gray {
+  color: #e7e9ed;
+}
+
 .text-covid {
   color: rgb(247, 155, 80);
 }
