@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './StateTableData.css'
+import CovidTrackerUtil from '../../util/CovidTrackerUtil';
 
 export class StateTableData extends Component {
 
@@ -67,10 +68,10 @@ export class StateTableData extends Component {
                 this.props.statewise.map(stateInfo => {
                   return <tr className="state-table-data__table-row" key={stateInfo.statecode}>
                     <th className="state-table-data__table-data">{ stateInfo.state }</th>
-                    <th className="state-table-data__table-data">{stateInfo.confirmed}</th>
-                    <th className="state-table-data__table-data">{stateInfo.active}</th>
-                    <th className="state-table-data__table-data">{stateInfo.recovered}</th>
-                    <th className="state-table-data__table-data">{stateInfo.deaths}</th>
+                    <th className="state-table-data__table-data">{ CovidTrackerUtil.toLocal(stateInfo.confirmed) }</th>
+                    <th className="state-table-data__table-data">{ CovidTrackerUtil.toLocal(stateInfo.active) }</th>
+                    <th className="state-table-data__table-data">{ CovidTrackerUtil.toLocal(stateInfo.recovered) }</th>
+                    <th className="state-table-data__table-data">{ CovidTrackerUtil.toLocal(stateInfo.deaths) }</th>
                   </tr>
                 })
               }

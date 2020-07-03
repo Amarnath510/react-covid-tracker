@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './CovidTotalStats.css'
+import CovidTrackerUtil from '../../util/CovidTrackerUtil';
 
 export class CovidTotalStats extends Component {
   render() {
@@ -21,7 +22,7 @@ export class CovidTotalStats extends Component {
       const label = ` ${message} yesterday`;
       return <div className="covid-total-stats__daily-cases">
         <span className={`covid-total-stats__daily-${type}`}>
-          { parseInt(casesCount, 10).toLocaleString() }
+          { CovidTrackerUtil.toLocal(casesCount) }
         </span>
         <span className="text-light">{ label }</span>
       </div>
@@ -34,7 +35,7 @@ export class CovidTotalStats extends Component {
             <div className="covid-total-stats__card-container">
               <div className="covid-total-stats__card-stats">
                 <h4 className="text-light">Total Cases</h4>
-                <h3>{ parseInt(this.props.totalStats.confirmed, 10).toLocaleString() }</h3>
+                <h3>{ CovidTrackerUtil.toLocal(this.props.totalStats.confirmed) }</h3>
               </div>
               <div className="covid-total-stats__card-logo-container">
                 <img src="images/confirmed.png" alt="confirmed" className="covid-total-stats__card-logo"/>
@@ -46,7 +47,7 @@ export class CovidTotalStats extends Component {
             <div className="covid-total-stats__card-container">
               <div className="covid-total-stats__card-stats">
                 <h4 className="text-light">Active</h4>
-                <h3>{parseInt(this.props.totalStats.active, 10).toLocaleString()}</h3>
+                <h3>{ CovidTrackerUtil.toLocal(this.props.totalStats.active) }</h3>
               </div>
               <div className="covid-total-stats__card-logo-container">
                 <img src="images/active.png" alt="confirmed" className="covid-total-stats__card-logo" />
@@ -60,7 +61,7 @@ export class CovidTotalStats extends Component {
             <div className="covid-total-stats__card-container">
               <div className="covid-total-stats__card-stats">
                 <h4 className="text-light">Recovered</h4>
-                <h3>{parseInt(this.props.totalStats.recovered, 10).toLocaleString()}</h3>
+                <h3>{ CovidTrackerUtil.toLocal(this.props.totalStats.recovered) }</h3>
               </div>
               <div className="covid-total-stats__card-logo-container">
                 <img src="images/recovered.png" alt="confirmed" className="covid-total-stats__card-logo" />
@@ -72,7 +73,7 @@ export class CovidTotalStats extends Component {
             <div className="covid-total-stats__card-container">
               <div className="covid-total-stats__card-stats">
                 <h4 className="text-light">Deaths</h4>
-                <h3>{parseInt(this.props.totalStats.deaths, 10).toLocaleString()}</h3>
+                <h3>{ CovidTrackerUtil.toLocal(this.props.totalStats.deaths) }</h3>
               </div>
               <div className="covid-total-stats__card-logo-container">
                 <img src="images/death.png" alt="confirmed" className="covid-total-stats__card-logo" />

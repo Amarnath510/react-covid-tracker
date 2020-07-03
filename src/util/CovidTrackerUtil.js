@@ -75,6 +75,13 @@ class CovidTrackerUtil {
       return 0;
     }
   }
+
+  static toLocal(data) {
+    if (!isNaN(data)) {
+      return parseInt(data, 10).toLocaleString('en-IN');
+    }
+    return data;
+  }
 }
 
 export default CovidTrackerUtil;
