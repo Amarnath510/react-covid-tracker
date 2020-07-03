@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Line, Bar } from 'react-chartjs-2'
 
+
+// ChartJS demos: http://jerairrest.github.io/react-chartjs-2/
 export class CovidCharts extends Component {
 
   constructor(props) {
@@ -42,7 +44,7 @@ export class CovidCharts extends Component {
           {
             label: 'Total Deaths',
             data: this.getChartData(this.state.casesTimeSeries, 'totaldeceased'),
-            backgroundColor: '#282c37'
+            backgroundColor: '#626b7a'
           }
         ]
       }
