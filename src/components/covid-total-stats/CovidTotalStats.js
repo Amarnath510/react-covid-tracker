@@ -33,7 +33,7 @@ export class CovidTotalStats extends Component {
           <li className="covid-total-stats__card">
             <div className="covid-total-stats__card-container">
               <div className="covid-total-stats__card-stats">
-                <p className="text-light">Total Cases</p>
+                <h4 className="text-light">Total Cases</h4>
                 <h3>{ parseInt(this.props.totalStats.confirmed, 10).toLocaleString() }</h3>
               </div>
               <div className="covid-total-stats__card-logo-container">
@@ -45,7 +45,7 @@ export class CovidTotalStats extends Component {
           <li className="covid-total-stats__card">
             <div className="covid-total-stats__card-container">
               <div className="covid-total-stats__card-stats">
-                <p className="text-light">Active</p>
+                <h4 className="text-light">Active</h4>
                 <h3>{parseInt(this.props.totalStats.active, 10).toLocaleString()}</h3>
               </div>
               <div className="covid-total-stats__card-logo-container">
@@ -59,7 +59,7 @@ export class CovidTotalStats extends Component {
           <li className="covid-total-stats__card">
             <div className="covid-total-stats__card-container">
               <div className="covid-total-stats__card-stats">
-                <p className="text-light">Recovered</p>
+                <h4 className="text-light">Recovered</h4>
                 <h3>{parseInt(this.props.totalStats.recovered, 10).toLocaleString()}</h3>
               </div>
               <div className="covid-total-stats__card-logo-container">
@@ -71,7 +71,7 @@ export class CovidTotalStats extends Component {
           <li className="covid-total-stats__card">
             <div className="covid-total-stats__card-container">
               <div className="covid-total-stats__card-stats">
-                <p className="text-light">Deaths</p>
+                <h4 className="text-light">Deaths</h4>
                 <h3>{parseInt(this.props.totalStats.deaths, 10).toLocaleString()}</h3>
               </div>
               <div className="covid-total-stats__card-logo-container">

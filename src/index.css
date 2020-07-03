@@ -118,13 +118,12 @@ p {
 
 /* media queries */
 @media only screen and (max-width: 720px) {
+  .covid-tracker-app {
+    font-size: 100%;
+  }
 
   .header__title {
     justify-content: center !important;
-  }
-
-  .covid-tracker-app {
-    font-size: 100%;
   }
 
   .covid-tracker-app__main {
@@ -158,6 +157,10 @@ p {
 
   .covid-total-stats__daily-cases {
     font-size: 100% !important;
+  }
+
+  .covid-total-stats__card-stats {
+    font-size: 120%;
   }
 
 }
