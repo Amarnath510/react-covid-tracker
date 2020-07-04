@@ -54,8 +54,10 @@ export class CovidTracker extends Component {
     const latestCasesTimeSeries = covidData.cases_time_series[covidData.cases_time_series.length - 1];
     return <React.Fragment>
       <CovidTotalStats totalStats={covidData.statewise[0]} latestCasesTimeSeries={ latestCasesTimeSeries }/>
-      <CovidTrackerHeader covidData={ covidData } />
-      <StateTableData statewise={statewise} onSortChanged={this.onSortChange} sortBy={ this.state.sortBy }/>
+      <article className="covid-tracker__state-data">
+        <CovidTrackerHeader covidData={ covidData } />
+        <StateTableData statewise={statewise} onSortChanged={this.onSortChange} sortBy={ this.state.sortBy }/>
+      </article>
       <CovidCharts casesTimeSeries={ covidData.cases_time_series }/>
     </React.Fragment>
   }
@@ -65,9 +67,9 @@ export class CovidTracker extends Component {
       return <Loading />
     }
     return (
-      <div className="covid-tracker">
+      <article className="covid-tracker">
         { this.covidTrackerInfo() }
-      </div>
+      </article>
     )
   }
 }

@@ -29,7 +29,7 @@ export class CovidTotalStats extends Component {
     };
 
     return (
-      <div className="covid-total-stats">
+      <article className="covid-total-stats">
         <ul className="covid-total-stats__cards">
           <li className="covid-total-stats__card">
             <div className="covid-total-stats__card-container">
@@ -82,7 +82,7 @@ export class CovidTotalStats extends Component {
             { dailyCases('deaths', this.props.latestCasesTimeSeries.dailydeceased, 'deaths') }
           </li>
         </ul>
-      </div>
+      </article>
     )
   }
 }

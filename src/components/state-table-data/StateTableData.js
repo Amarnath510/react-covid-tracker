@@ -21,8 +21,8 @@ export class StateTableData extends Component {
 
   render() {
     return (
-      <div className="state-table-data">
-        <div className="state-table-data__container">
+      <article className="state-table-data">
+        <section className="state-table-data__container">
           <table className="state-table-data__table">
             <thead>
               <tr className="state-table-data__table-row">
@@ -77,8 +77,8 @@ export class StateTableData extends Component {
               }
             </tbody>
           </table>
-        </div>
-      </div>
+        </section>
+      </article>
     )
   }
 }

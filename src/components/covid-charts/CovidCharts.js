@@ -53,25 +53,25 @@ export class CovidCharts extends Component {
 
   render() {
     return (
-      <div style={{ padding: '32px 0' }}>
-        <div style={{padding: '8px 0'}}>
+      <article style={{ padding: '32px 0' }}>
+        <section style={{padding: '8px 0'}}>
           <Line
             data={this.state.barChartData}
             width={300}
             height={400}
             options={{ maintainAspectRatio: false }}
           />
-        </div>
+        </section>
 
-        <div style={{ padding: '8px 0' }}>
+        <section style={{ padding: '8px 0' }}>
           <Bar
             data={this.state.lineChartData}
             width={300}
             height={400}
             options={{ maintainAspectRatio: false }}
           />
-        </div>
-      </div>
+        </section>
+      </article>
     )
   }
 }
