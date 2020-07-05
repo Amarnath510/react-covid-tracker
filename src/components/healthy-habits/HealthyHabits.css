@@ -1,0 +1,50 @@
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.healthy-habits {
+  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+  height: 100vh;
+  animation: 2s ease-out 0s 1 slideInFromTop;
+  z-index: 1000;
+}
+
+.healthy-habits__hidden {
+  visibility: hidden;
+  height: 0vh;
+}
+
+.healthy-habits__header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 32px;
+}
+
+.healthy-habits__close {
+  border: none;
+  background: none;
+  font-size: 200%;
+}
+
+.healthy-habits__content {
+  display: flex;
+  justify-content: center;
+}
+
+.healthy-habits__list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.healthy-habits__img {
+  width: 140px;
+  margin-right: 32px;
+}
+
+
