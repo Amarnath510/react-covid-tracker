@@ -11,6 +11,7 @@
 }
 
 .covid-state-timeline__select {
-  padding: 8px;
+  padding-left: 4px;
   border: 1px solid #cfd3e0;
+  width: 40%;
 }
