@@ -33,6 +33,7 @@ export class CovidCharts extends Component {
         datasets: [
           {
             label: 'Total Cases',
+            fill: true,
             data: this.getChartData(this.state.casesTimeSeries, 'totalconfirmed'),
             backgroundColor: '#ff595d'
           }

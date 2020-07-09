@@ -1,6 +1,6 @@
 class CovidTrackerUtil {
 
-  static sortDataBy(statewise = [], sortBy = 'state') {
+  static sortDataBy(statewise = [], sortBy = 'confirmed-dec') {
     let statesData = [...statewise];
     statesData = statesData.filter(stateData => {
       if (stateData.statecode === 'TT' || stateData.statecode === 'UN') {
@@ -81,6 +81,22 @@ class CovidTrackerUtil {
       return parseInt(data, 10).toLocaleString('en-IN');
     }
     return data;
+  }
+
+  static sortStateTimeline(statesTimeline) {
+    return statesTimeline.sort((s1, s2)  => {
+      const s1TimelineKeys = Object.keys(s1.timeline);
+      const s2TimelineKeys = Object.keys(s2.timeline);
+      const s1Cases = s1.timeline[s1TimelineKeys[s1TimelineKeys.length - 1]];
+      const s2Cases = s2.timeline[s2TimelineKeys[s2TimelineKeys.length - 1]];
+      if (s1Cases < s2Cases) {
+        return 1;
+      } else if (s1Cases > s2Cases) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
   }
 }
 

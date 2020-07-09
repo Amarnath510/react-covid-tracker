@@ -163,4 +163,8 @@ p {
     font-size: 120%;
   }
 
+  .covid-total-stats__card:hover {
+    transform: scale(0.9) !important;
+  }
+
 }

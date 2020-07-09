@@ -7,6 +7,7 @@ import CovidTrackerUtil from '../../util/CovidTrackerUtil';
 import CovidTotalStats from '../../components/covid-total-stats/CovidTotalStats';
 import StateTableData from '../../components/state-table-data/StateTableData';
 import CovidCharts from '../../components/covid-charts/CovidCharts';
+import CovidStateTimeline from '../../components/covid-state-timeline/CovidStateTimeline';
 
 export class CovidTracker extends Component {
 
@@ -17,9 +18,10 @@ export class CovidTracker extends Component {
       statewise: [],
       casesTimeSeries: [],
       statesWithDistricts: {},
+      stateTimeline: [],
       isLoading: true,
       showModal: false,
-      sortBy: 'state-inc'
+      sortBy: 'confirmed-dec'
     }
     this.covidApi = CovidTrackerApi.getInstance();
   }
@@ -30,11 +32,13 @@ export class CovidTracker extends Component {
       .then(responseArr => {
         const covidData = responseArr[0].data;
         const statesWithDistricts = responseArr[1].data;
+        const stateTimeline = responseArr[2].data;
         this.setState({
           covidData,
           statewise: CovidTrackerUtil.sortDataBy(covidData.statewise),
           casesTimeSeries: covidData.cases_time_series,
           statesWithDistricts: statesWithDistricts,
+          stateTimeline: stateTimeline,
           isLoading: false
         })
       }, (error) => {
@@ -50,7 +54,7 @@ export class CovidTracker extends Component {
   }
 
   covidTrackerInfo = () => {
-    const { covidData, statewise } = this.state;
+    const { covidData, statewise, stateTimeline, statesWithDistricts } = this.state;
     const latestCasesTimeSeries = covidData.cases_time_series[covidData.cases_time_series.length - 1];
     return <React.Fragment>
       <CovidTotalStats totalStats={covidData.statewise[0]} latestCasesTimeSeries={ latestCasesTimeSeries }/>
@@ -59,6 +63,7 @@ export class CovidTracker extends Component {
         <StateTableData statewise={statewise} onSortChanged={this.onSortChange} sortBy={ this.state.sortBy }/>
       </article>
       <CovidCharts casesTimeSeries={ covidData.cases_time_series }/>
+      <CovidStateTimeline stateTimeline={stateTimeline} statesWithDistricts={statesWithDistricts}/>
     </React.Fragment>
   }
 

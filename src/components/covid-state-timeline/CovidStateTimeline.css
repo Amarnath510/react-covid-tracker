@@ -1,0 +1,16 @@
+.covid-state-timeline__title {
+  font-size: 110%;
+}
+
+.covid-state-timeline__header {
+  display: flex;
+}
+
+.covid-state-timeline__title {
+  margin-right: 16px;
+}
+
+.covid-state-timeline__select {
+  padding: 8px;
+  border: 1px solid #cfd3e0;
+}
