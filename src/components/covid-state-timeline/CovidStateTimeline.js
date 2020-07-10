@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import { Line } from 'react-chartjs-2'
 import './CovidStateTimeline.css'
 import CovidTrackerUtil from '../../util/CovidTrackerUtil';
+import Select from 'react-select'; // https://www.digitalocean.com/community/tutorials/react-react-select
 
 export class CovidStateTimeline extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      statesName: [],
+      selectedStateOption: null,
+      stateOptions: [],
       statesMap: {},
       lineChartData: {}
     }
@@ -37,10 +39,10 @@ export class CovidStateTimeline extends Component {
     };
   }
 
-  selectChartData(e) {
-    e.preventDefault();
+  selectChartData(state) {
+    // e.preventDefault();
     this.setState({
-      lineChartData: this.prepareChartData(e.target.value, this.state.statesMap)
+      lineChartData: this.prepareChartData(state, this.state.statesMap)
     });
   }
 
@@ -57,8 +59,12 @@ export class CovidStateTimeline extends Component {
       });
     });
     const stateMapArraySorted = CovidTrackerUtil.sortStateTimeline(stateMapArray);
+    const stateOptions = stateMapArraySorted.map(sortedState => {
+      return { label: sortedState.name, value: sortedState.name };
+    });
     this.setState({
-      statesName: stateMapArraySorted.map(sortedState => sortedState.name),
+      selectedStateOption: stateOptions[0],
+      stateOptions: stateOptions,
       statesMap: stateMapArraySorted,
       lineChartData: this.prepareChartData(stateMapArraySorted[0].name, stateMapArraySorted)
     })
@@ -69,13 +75,13 @@ export class CovidStateTimeline extends Component {
       <article className="covid-state-timeline">
         <header className="covid-state-timeline__header">
           <h2 className="covid-state-timeline__title">Covid State Timeline</h2>
-          <select className="covid-state-timeline__select" onChange={this.selectChartData.bind(this)}>
-            {
-              this.state.statesName.map(stateName => {
-                return <option key={stateName} value={stateName}>{stateName}</option>
-              })
-            }
-          </select>
+          <div className="covid-state-timeline__select">
+            <Select
+              value={ this.state.selectedStateOption }
+              options={ this.state.stateOptions }
+              onChange={opt => this.selectChartData(opt.value)}
+            />
+          </div>
         </header>
         <section style={{ padding: '8px 0' }}>
           <Line
