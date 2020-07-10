@@ -39,10 +39,11 @@ export class CovidStateTimeline extends Component {
     };
   }
 
-  selectChartData(state) {
+  selectChartData(stateOption) {
     // e.preventDefault();
     this.setState({
-      lineChartData: this.prepareChartData(state, this.state.statesMap)
+      selectedStateOption: stateOption,
+      lineChartData: this.prepareChartData(stateOption.value, this.state.statesMap)
     });
   }
 
@@ -79,7 +80,7 @@ export class CovidStateTimeline extends Component {
             <Select
               value={ this.state.selectedStateOption }
               options={ this.state.stateOptions }
-              onChange={opt => this.selectChartData(opt.value)}
+              onChange={opt => this.selectChartData(opt)}
             />
           </div>
         </header>
