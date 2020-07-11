@@ -8,6 +8,7 @@ class CovidTrackerApi {
   COVID_DATA_PATH = 'https://api.covid19india.org/data.json';
   COVID_STATE_DISTRICT_PATH = 'https://api.covid19india.org/state_district_wise.json';
   COVID_STATE_TIME_LINE = 'https://covid-india-cases.herokuapp.com/statetimeline/';
+  COVID_HELPLINE = 'https://api.rootnet.in/covid19-in/contacts';
 
   fetchCovidCountryAndStateData() {
     return axios.all([
@@ -19,6 +20,9 @@ class CovidTrackerApi {
 
   fetchCovidData() {
     return axios.get(this.COVID_DATA_PATH);
+    // return new Promise(function (resolve, reject) {
+    //   resolve([]);
+    // });
   }
   
   fetchCovidStatesDetails() {
@@ -27,6 +31,10 @@ class CovidTrackerApi {
 
   fetchStateTimeline() {
     return axios.get(this.COVID_STATE_TIME_LINE);
+  }
+
+  fetchCovidHelpline() {
+    return axios.get(this.COVID_HELPLINE);
   }
 
   static getInstance() {

@@ -17,14 +17,16 @@ export class Header extends Component {
             <img src="images/covid.png" alt="" className="header__logo"/>
             <Link to="/" className="header__logo-link">Covid-19 Tracker (India)</Link>
           </h1>
-          {/* <ul className="header__nav-links">
+          <ul className="header__nav-links">
             <li className="header__nav-link">
-              <Link to="/" className={`link ${this.isActive('/') ? 'header__nav-link-active' : ''}`}>Data</Link>
+              <Link to="/" className={`link ${this.isActive('/') ? 'header__nav-link-active' : ''}`}>Stats</Link>
+              <img src="images/growth.svg" className="covid-tracker-app__nav-icon" />
             </li>
             <li className="header__nav-link">
-              <Link to="/covid_assessment" className={`link ${this.isActive('/covid_assessment') ? 'header__nav-link-active' : ''}`}>Covid Assessment</Link>
+              <Link to="/helpline" className={`link ${this.isActive('/helpline') ? 'header__nav-link-active' : ''}`}>Helpline</Link>
+              <img src="images/phone.svg" className="covid-tracker-app__nav-icon" />
             </li>
-          </ul> */}
+          </ul>
         </nav>
       </header>
     )

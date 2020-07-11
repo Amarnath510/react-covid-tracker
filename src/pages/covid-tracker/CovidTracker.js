@@ -8,6 +8,7 @@ import CovidTotalStats from '../../components/covid-total-stats/CovidTotalStats'
 import StateTableData from '../../components/state-table-data/StateTableData';
 import CovidCharts from '../../components/covid-charts/CovidCharts';
 import CovidStateTimeline from '../../components/covid-state-timeline/CovidStateTimeline';
+import { get } from 'lodash';
 
 export class CovidTracker extends Component {
 
@@ -21,6 +22,7 @@ export class CovidTracker extends Component {
       stateTimeline: [],
       isLoading: true,
       showModal: false,
+      lastUpdatedDate: null,
       sortBy: 'confirmed-dec'
     }
     this.covidApi = CovidTrackerApi.getInstance();
@@ -35,10 +37,11 @@ export class CovidTracker extends Component {
         const stateTimeline = responseArr[2].data;
         this.setState({
           covidData,
-          statewise: CovidTrackerUtil.sortDataBy(covidData.statewise),
-          casesTimeSeries: covidData.cases_time_series,
+          statewise: CovidTrackerUtil.sortDataBy(get(covidData, 'statewise', [])),
+          casesTimeSeries: get(covidData, 'cases_time_series', []),
           statesWithDistricts: statesWithDistricts,
           stateTimeline: stateTimeline,
+          lastUpdatedDate: CovidTrackerUtil.getLastUpdatedDate(covidData.cases_time_series),
           isLoading: false
         })
       }, (error) => {
@@ -59,7 +62,7 @@ export class CovidTracker extends Component {
     return <React.Fragment>
       <CovidTotalStats totalStats={covidData.statewise[0]} latestCasesTimeSeries={ latestCasesTimeSeries }/>
       <article className="covid-tracker__state-data">
-        <CovidTrackerHeader covidData={ covidData } />
+        <CovidTrackerHeader type="tracker" title= 'State-wise Cases' lastUpdatedDate={ this.state.lastUpdatedDate }/>
         <StateTableData statewise={statewise} onSortChanged={this.onSortChange} sortBy={ this.state.sortBy }/>
       </article>
       <CovidCharts casesTimeSeries={ covidData.cases_time_series }/>

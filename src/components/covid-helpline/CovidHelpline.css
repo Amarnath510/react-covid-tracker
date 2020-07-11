@@ -1,0 +1,17 @@
+.covid-helpline__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 80%;
+  margin: 0 auto;
+}
+
+.covid-helpline__table-data-header,
+.covid-helpline__table-data {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.covid-helpline__table-row:nth-child(even) {
+  background: #e7e9ed;
+}
