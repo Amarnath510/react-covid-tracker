@@ -4,6 +4,7 @@ class CovidTrackerApi {
 
   INSTANCE = null;
 
+  // Beds, Hospitals, Helplines: https://github.com/amodm/api-covid19-in
   // Covid source: https://documenter.getpostman.com/view/10724784/SzYXXKmA?version=latest
   COVID_DATA_PATH = 'https://api.covid19india.org/data.json';
   COVID_STATE_DISTRICT_PATH = 'https://api.covid19india.org/state_district_wise.json';

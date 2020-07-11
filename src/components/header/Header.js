@@ -20,11 +20,11 @@ export class Header extends Component {
           <ul className="header__nav-links">
             <li className="header__nav-link">
               <Link to="/" className={`link ${this.isActive('/') ? 'header__nav-link-active' : ''}`}>Stats</Link>
-              <img src="images/growth.svg" className="covid-tracker-app__nav-icon" />
+              <img src="images/growth.svg" className="covid-tracker-app__nav-icon" alt=""/>
             </li>
             <li className="header__nav-link">
               <Link to="/helpline" className={`link ${this.isActive('/helpline') ? 'header__nav-link-active' : ''}`}>Helpline</Link>
-              <img src="images/phone.svg" className="covid-tracker-app__nav-icon" />
+              <img src="images/phone.svg" className="covid-tracker-app__nav-icon" alt=""/>
             </li>
           </ul>
         </nav>
