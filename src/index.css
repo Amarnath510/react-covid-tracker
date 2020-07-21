@@ -126,7 +126,7 @@ p {
 }
 
 /* media queries */
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 1000px) {
 
   body {
     background-color: #fff;
